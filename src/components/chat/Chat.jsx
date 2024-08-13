@@ -114,7 +114,11 @@ const Chat = ({ onShowDetail, showDetail }) => {
           >
             <div className="texts">
               <p>{message.text}</p>
-              <span>{format(message.createdAt.toDate())}</span>
+              {/* <span>{format(message.createdAt.toDate())}</span> */}
+              <span>
+                {message.createdAt.toDate().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}{" "}
+                {message.createdAt.toDate().toLocaleDateString()}
+              </span>
             </div>
           </div>
         ))}
